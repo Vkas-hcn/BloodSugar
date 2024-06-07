@@ -25,3 +25,15 @@
 -obfuscationdictionary proguard-iol.txt
 -classobfuscationdictionary proguard-iol.txt
 -packageobfuscationdictionary proguard-iol.txt
+
+-dontwarn com.jeremyliao.liveeventbus.**
+-dontwarn androidx.lifecycle.LiveData
+-keep class androidx.lifecycle.LiveData { *; }
+-keep class androidx.lifecycle.LifecycleRegistry { *; }
+-keep class androidx.arch.core.internal.SafeIterableMap { *; }
+-keepattributes *Annotation*
+
+# Keep Navigation components
+-keep public class androidx.navigation.** { *; }
+-keep class androidx.fragment.app.FragmentContainerView { *; }
+-keep @androidx.navigation.Navigator.Name class * { *; }
